@@ -19,7 +19,7 @@ namespace Cliente
                 socket_cliente.Flush();
                 string tamanho_bytes = Encoding.ASCII.GetString(RecPacket);
                 int tamanho = Convert.ToInt16(tamanho_bytes);
-                Console.WriteLine("len: " + tamanho);
+                Console.WriteLine("only: " + tamanho);
  
                 byte[] r_comando = new byte[tamanho];
                 socket_cliente.Read(r_comando, 0, r_comando.Length);
@@ -32,7 +32,7 @@ namespace Cliente
             catch
             {
                 
-                Console.WriteLine("Desconectado!");
+                Console.WriteLine("Disconnected!");
                 Console.ReadKey();
                 socket_cliente.Close();
             }
